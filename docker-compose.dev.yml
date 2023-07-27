@@ -1,0 +1,123 @@
+version: '3.5'
+
+services:
+  proxy:
+    build:
+      context: ./proxy
+    container_name: proxy
+    ports:
+      - "443:443"
+      - "8080:80"
+    depends_on:
+      - client-app
+      - backend-app
+    env_file:
+      - .env
+    volumes:
+      - ./proxy/conf.d/proxy.conf:/etc/nginx/conf.d/proxy.conf
+      - ./proxy/conf.d/ssl:/etc/nginx/conf.d/ssl
+      - ./proxy/conf.d/headers:/etc/nginx/conf.d/headers
+      - ./proxy/conf.d/redirect:/etc/nginx/conf.d/redirect
+      - ./proxy/ssl/:/etc/ssl/
+      - ./proxy/error:/var/log/nginx/error
+    networks:
+      - main-networks
+    restart: always
+
+  client-app:
+    build:
+      context: ./frontend
+    ports:
+      - "5001:5001" #  ssl теперь через прокси
+    depends_on:
+      - backend-app
+      - postgres
+      - mongo
+    env_file:
+      - .env
+    volumes:
+      # что бы слушать файлы
+      - ./frontend:/var/www
+    command: npm run dev
+    networks:
+      - main-networks
+    restart: always
+
+  backend-app:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - mongo
+    volumes:
+      # что бы слушать файлы
+      - ./backend:/var/www
+    command: npm run start
+    networks:
+      - main-networks
+    restart: always
+
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    env_file:
+      - .env
+    environment:
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-volume:/data/postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - main-networks
+    restart: always
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    env_file:
+      - .env
+    environment:
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin-volume:/root/.pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - main-networks
+    restart: always
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    env_file:
+      - .env
+    volumes:
+      - mongo-volume:/data/mongo
+    networks:
+      - main-networks
+    restart: always
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    env_file:
+      - .env
+    networks:
+      - main-networks
+    restart: always
+
+networks:
+  main-networks:
+    driver: bridge
+
+volumes:
+  postgres-volume:
+  pgadmin-volume:
+  mongo-volume:

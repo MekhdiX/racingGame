@@ -1,0 +1,10 @@
+.leaderboard__top {
+  .leaderboard__top-bar {
+    padding: 10px;
+  }
+
+  .leaderboard__list {
+    padding: 20px;
+    background: #ffffff;
+  }
+}

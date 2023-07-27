@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainMenu Component renders correctly when closed 1`] = `null`;
+
+exports[`MainMenu Component renders correctly when open 1`] = `
+<div
+  className="ui page modals dimmer transition visible active"
+>
+  <div
+    className="ui modal transition visible active"
+    style={Object {}}
+  >
+    <div
+      className="ui header"
+    >
+      <i
+        aria-hidden="true"
+        className="archive icon"
+        onClick={[Function]}
+      />
+      <div
+        className="content"
+      >
+        Title
+      </div>
+    </div>
+    <div
+      className="content"
+    >
+      <p>
+        Text
+      </p>
+    </div>
+    <div
+      className="actions"
+    >
+      <button
+        className="ui grey button"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="remove icon"
+          onClick={[Function]}
+        />
+         
+        Cancel
+      </button>
+      <button
+        className="ui blue button"
+        onClick={[Function]}
+      >
+        <i
+          aria-hidden="true"
+          className="checkmark icon"
+          onClick={[Function]}
+        />
+         
+        Ok
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,26 @@
+.home {
+  .main {
+    background-image: url('assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.light {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  }
+
+  &.dark {
+    background-color: #000000;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+  }
+
+  &__button {
+    width: 150px;
+  }
+}

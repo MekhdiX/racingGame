@@ -1,0 +1,9 @@
+.ui.container.feedback {
+  max-width: 400px !important;
+  border: 1px solid #eee;
+
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 24px;
+  padding: 50px;
+}

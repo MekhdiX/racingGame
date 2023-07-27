@@ -1,0 +1,21 @@
+@import 'pages/SignUp/SignUp';
+
+.yandex_oauth {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  margin-top: 15px;
+  color: #4183c4;
+}
+
+.yandex_logo {
+  height: 17px;
+  width: 60px;
+  margin: 0 10px;
+  background: url('assets/yandex_logo.svg') no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  cursor: pointer;
+}

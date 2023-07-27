@@ -1,0 +1,39 @@
+.ui.container.profile {
+  /* padding: 25px;
+  max-width: 550px;
+  margin: auto; */
+  max-width: 400px !important;
+  border-radius: 24px;
+  padding: 50px;
+  background: #ffffff;
+
+  .light & {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  }
+
+  .dark & {
+    box-shadow: 0 0 6px #ffffffcf;
+  }
+}
+
+.profile {
+  &__avatar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__avatar-image {
+    border-radius: 10px;
+  }
+
+  &__avatar-image:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  &__notification {
+    margin-top: 10px;
+  }
+}

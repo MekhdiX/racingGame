@@ -1,0 +1,44 @@
+name: Yandex Cloud Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v1
+
+      - name: Push repo to server
+        uses: appleboy/scp-action@master
+        env:
+          HOST: ${{ secrets.YA_CLOUD_SSH_HOST }}
+          PORT: ${{ secrets.YA_CLOUD_SSH_PORT }}
+          USERNAME: ${{ secrets.YA_CLOUD_SSH_USERNAME }}
+          KEY: ${{ secrets.YA_CLOUD_SSH_KEY }}
+        with:
+          source: "."
+          target: "/home/admin/deploy"
+          rm: true
+
+      - name: Build remote project
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.YA_CLOUD_SSH_HOST }}
+          port: ${{ secrets.YA_CLOUD_SSH_PORT }}
+          username: ${{ secrets.YA_CLOUD_SSH_USERNAME }}
+          key: ${{ secrets.YA_CLOUD_SSH_KEY }}
+          script: |
+            cp .env.production deploy/.env
+            cd deploy
+            docker-compose down
+            docker-compose up -d --build
+            docker system prune --force

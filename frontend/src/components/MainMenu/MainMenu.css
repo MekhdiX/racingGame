@@ -1,0 +1,50 @@
+.ui.menu {
+  &.main-menu {
+    background: #1678c2;
+  }
+  & .item.main-menu__item {
+    font-weight: 700;
+
+    .light & {
+      color: #ffffff;
+
+      &.active {
+        color: #ffffff;
+      }
+    }
+    .dark & {
+      color: #000000;
+
+      &.active {
+        color: #000000;
+      }
+      &:hover {
+        color: #ffffff !important;
+      }
+    }
+  }
+}
+
+.ui.menu .main_transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.toggle_theme {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+
+  .ui.toggle.checkbox label:before,
+  .ui.toggle.checkbox input:focus ~ label:before {
+    background: rgb(251 189 9);
+  }
+
+  .ui.toggle.checkbox input:checked ~ label:before {
+    background-color: #000000 !important;
+  }
+
+  &__icon {
+    margin: 0 10px !important;
+  }
+}

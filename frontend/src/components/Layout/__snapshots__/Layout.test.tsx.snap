@@ -1,0 +1,272 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component renders correctly 1`] = `
+<div
+  className="layout  light"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="layout__app-name-wrapper"
+    >
+      <a
+        className="layout__app-name light"
+        data-highlightword="Casablanca"
+        href="/"
+        onClick={[Function]}
+      >
+        Casablanca racing
+      </a>
+    </div>
+    <div
+      className="ui main-menu light layout__main-menu menu"
+    >
+      <a
+        className="item main-menu__item"
+        onClick={[Function]}
+      >
+        Играть
+      </a>
+      <div
+        className="right menu"
+      >
+        <div
+          className="toggle_theme"
+        >
+          <i
+            aria-hidden="true"
+            className="yellow sun large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+          <div
+            className="ui fitted toggle checkbox"
+            color="black"
+            onChange={[Function]}
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+          >
+            <input
+              checked={false}
+              className="hidden"
+              readOnly={true}
+              tabIndex={0}
+              type="checkbox"
+            />
+            <label />
+          </div>
+          <i
+            aria-hidden="true"
+            className="moon large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+        </div>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Войти
+        </a>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Зарегистрироваться
+        </a>
+      </div>
+    </div>
+    <div
+      className="layout__main main "
+    >
+      <div>
+        Hello world
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Layout Component renders correctly with all props 1`] = `
+<div
+  className="layout class-name light"
+>
+  <div
+    className="ui container layout__container_valign"
+  >
+    <div
+      className="layout__app-name-wrapper"
+    >
+      <a
+        className="layout__app-name light"
+        data-highlightword="Casablanca"
+        href="/"
+        onClick={[Function]}
+      >
+        Casablanca racing
+      </a>
+    </div>
+    <div
+      className="ui main-menu light layout__main-menu menu"
+    >
+      <a
+        className="item main-menu__item"
+        onClick={[Function]}
+      >
+        Играть
+      </a>
+      <div
+        className="right menu"
+      >
+        <div
+          className="toggle_theme"
+        >
+          <i
+            aria-hidden="true"
+            className="yellow sun large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+          <div
+            className="ui fitted toggle checkbox"
+            color="black"
+            onChange={[Function]}
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+          >
+            <input
+              checked={false}
+              className="hidden"
+              readOnly={true}
+              tabIndex={0}
+              type="checkbox"
+            />
+            <label />
+          </div>
+          <i
+            aria-hidden="true"
+            className="moon large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+        </div>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Войти
+        </a>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Зарегистрироваться
+        </a>
+      </div>
+    </div>
+    <h1
+      className="ui header layout__header"
+    >
+      Title
+    </h1>
+    <div
+      className="layout__main main main_transparent"
+    >
+      <div>
+        Hello world
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Layout Component renders correctly with title prop 1`] = `
+<div
+  className="layout  light"
+>
+  <div
+    className="ui container"
+  >
+    <div
+      className="layout__app-name-wrapper"
+    >
+      <a
+        className="layout__app-name light"
+        data-highlightword="Casablanca"
+        href="/"
+        onClick={[Function]}
+      >
+        Casablanca racing
+      </a>
+    </div>
+    <div
+      className="ui main-menu light layout__main-menu menu"
+    >
+      <a
+        className="item main-menu__item"
+        onClick={[Function]}
+      >
+        Играть
+      </a>
+      <div
+        className="right menu"
+      >
+        <div
+          className="toggle_theme"
+        >
+          <i
+            aria-hidden="true"
+            className="yellow sun large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+          <div
+            className="ui fitted toggle checkbox"
+            color="black"
+            onChange={[Function]}
+            onClick={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+          >
+            <input
+              checked={false}
+              className="hidden"
+              readOnly={true}
+              tabIndex={0}
+              type="checkbox"
+            />
+            <label />
+          </div>
+          <i
+            aria-hidden="true"
+            className="moon large icon toggle_theme__icon"
+            onClick={[Function]}
+          />
+        </div>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Войти
+        </a>
+        <a
+          className="item main-menu__item"
+          onClick={[Function]}
+        >
+          Зарегистрироваться
+        </a>
+      </div>
+    </div>
+    <h1
+      className="ui header layout__header"
+    >
+      Title
+    </h1>
+    <div
+      className="layout__main main "
+    >
+      <div>
+        Hello world
+      </div>
+    </div>
+  </div>
+</div>
+`;
